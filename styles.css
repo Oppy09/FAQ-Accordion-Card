@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.container {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    margin: 5rem auto;
+    background-color:  hsl(240, 5%, 91%);
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.container .illustration {
+    width: 50%;
+    display: grid;
+    grid-auto-flow: row;
+}
+.illustration .img-container {
+    position: absolute;
+    overflow: hidden;
+}
+.illustration .bg-container {
+    top: -40%;
+    left: -50%;
+}
+/* .illustration .bg-container {
+    top: -25%;
+    left: -28%;
+} */
+.bg-image {
+    max-width: 100%;
+}
+.illustration .dashboard-container {
+    top: 25%;
+}
+.dashboard-image {
+    position: relative;
+    left: -5rem;
+}
+.illustration .box-container {
+    top: 45%;
+    z-index: 10;
+    left: 3rem;
+}
+img {
+    max-width: 100%;
+}
+.container .contents {
+    width: 50%;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.contents .questionnaire {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.questionnaire .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.questions .answer p {
+    color: hsl(240, 6%, 50%);
+    width: 50ch;
+    font-size: 14px;
+    display: none;
+}
+.questions .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    color: hsl(238, 29%, 16%);
+    font-weight: 400;
+}
+hr {
+    color:  hsl(240, 5%, 91%);
+}
+.header .icon:hover {
+    cursor: pointer;
+}
+.header .icon svg {
+    color: transparent;
+}
+.header .icon svg.active {
+    transition: all 250ms ease-in;
+    transform: rotate(180deg);
+}
+.header.active {
+    transition: all 250ms ease-in;
+    font-weight: 700;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+    .illustration .bg-container {
+        top: -40%;
+        left: -60%;
+    }
+    .illustration .box-container {
+        top: 41%;
+        left: -2rem;
+    }
+    .container .contents {
+        padding: 3rem;
+    }
+    .questions .answer p {
+        width: 100%;
+    }
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+    body {
+        height: 100%;
+        padding: 1rem;
+    }
+    .container {
+        width: 100%;
+        margin: 2rem auto;
+    }
+    .illustration {
+        width: 30%;
+    }
+    .illustration .bg-container {
+        left: -80%;
+        top: -50%;
+    }
+    .contents {
+        width: 70%;
+        padding: 0;
+        gap: 0;
+    }
+    .contents .questionnaire {
+        width: 100%;
+        gap: .2rem;
+    }
+    .questionnaire .questions {
+        width: 100%;
+    }
+    .questions .answer p {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    body {
+        padding: 1rem;
+        height: 100%;
+    }
+    .container {
+        width: 100%;
+        flex-direction: column;
+        gap: 7rem;
+        overflow: visible;
+        margin: 40% auto;
+    }
+    .illustration {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: visible;
+    }
+    .illustration .img-container {
+        width: 70%;
+        top: -6.9rem;
+        left: 50%;
+        transform: translateX(-17%);
+        overflow: visible;
+    }
+    .illustration .box-container {
+        top: -2.5rem;
+        left: 4rem;
+        width: 30%;
+    }
+    .illustration .bg-container {
+        width: 70%;
+        top: -25%;
+        left: 27%;
+    }
+    .container .contents {
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        font-size: 15px;
+    }
+    .contents .questionnaire {
+        width: 100%;
+        margin: 1rem;
+    }
+    .questions .answer p {
+        width: 90%;
+    }
+}
